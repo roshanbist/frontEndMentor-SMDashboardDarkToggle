@@ -1,0 +1,76 @@
+// importing utils
+@use '../util' as *;
+
+.toggle {
+  display: grid;
+  grid-template-columns: auto rem(44);
+  border: 0;
+  grid-gap: rem(3) rem(8);
+  padding: 0;
+  margin: 0 0 0 auto;
+
+  @include breakpoint('medium') {
+    margin-left: 0;
+  }
+
+  &__mode {
+    font-size: rem(14);
+    grid-column: 1/2;
+    align-self: center;
+    color: var(--toggle);
+    font-weight: 700;
+  }
+
+  &__wrapper {
+    height: rem(24);
+    grid-column: 2/3;
+    position: relative;
+    overflow: hidden;
+
+    input[type='radio'] {
+      opacity: 0;
+      margin: 0 rem(-2);
+      width: 50%;
+      height: rem(24);
+      cursor: pointer;
+
+      &#light:checked ~ {
+        .toggle__button {
+          right: rem(3);
+          left: calc(100% - rem(21));
+        }
+      }
+
+      &:focus ~ {
+        .toggle__button {
+          border: rem(2) solid #fff;
+        }
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    display: block;
+    height: 100%;
+    border-radius: rem(12);
+    background: var(--toggle-bg);
+    transition: background 0.25s ease-in-out;
+  }
+
+  &__button {
+    position: absolute;
+    left: rem(3);
+    top: 50%;
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background: var(--toggle-button);
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+  }
+}

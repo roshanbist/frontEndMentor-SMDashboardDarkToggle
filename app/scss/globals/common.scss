@@ -1,0 +1,36 @@
+@use '../util' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-inter);
+  min-width: rem(320);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: rem(1110);
+  margin: 0 auto;
+  padding: 0 rem(15);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

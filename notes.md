@@ -10,7 +10,9 @@ Switching between light/dark modes via JS and Prefers-color-scheme media query -
 
 https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/
 
-Three option toggle: light/dark/system pref -- https://codepen.io/renddrew/pen/bRomab?editors=1100
+Three option toggle: light/dark/system pref
+-- https://codepen.io/renddrew/pen/bRomab?editors=1100
+-- https://codepen.io/SaraSoueidan/pen/jpBbrq
 
 CSS Variables (custom properties) -- https://css-tricks.com/updating-a-css-variable-with-javascript/
 
@@ -52,3 +54,25 @@ Outline for video:
 
 Semantic HTML and accessibility -- https://www.youtube.com/watch?v=qSNUi7pRmWg
 Inclusive cards -- https://inclusive-components.design/cards/
+
+---
+
+For using gulp in the project to convert the scss to css and make the workflow better, we install bunch of packages
+
+- install gulp-cli
+  command : npm install gulp-cli -g
+
+- install sass
+  command: npm install sass
+
+- create package.json file
+  command : npm init -y
+
+- install babel-core, auto prefixer, postcss and browser-sync, cssnano, dart-scss, gulp, gulp-babel
+
+  - cssnano is for minifying css
+  - dart-sass support new syntax @use, @forward
+  - gulp-terser is used to minify javascript files
+    command: npm install @babel/core @babel/preset-env postcss autoprefixer browser-sync cssnano dart-sass gulp gulp-babel gulp-postcss gulp-sass gulp-terser
+
+- command to start project type: gulp

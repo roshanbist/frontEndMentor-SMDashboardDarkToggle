@@ -1,0 +1,7 @@
+@use '../util' as *;
+
+footer {
+  a {
+    color: var(--text-color);
+  }
+}

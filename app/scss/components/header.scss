@@ -1,0 +1,29 @@
+// importing utils
+@use '../util' as *;
+
+.header {
+  padding: rem(20) 0 rem(30);
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint('medium') {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 100%;
+
+    @include breakpoint('medium') {
+      width: auto;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: rem(14);
+    line-height: 1.28;
+    font-weight: 700;
+    color: var(--text-color2);
+  }
+}

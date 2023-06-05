@@ -1,0 +1,15 @@
+@use '../util' as *;
+
+.card {
+  $self: &;
+
+  &--overview {
+    &:before {
+      display: none;
+    }
+
+    #{$self}__top {
+      justify-content: space-between;
+    }
+  }
+}
