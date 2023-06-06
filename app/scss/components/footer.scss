@@ -1,7 +1,13 @@
 @use '../util' as *;
 
 footer {
+  margin-bottom: rem(30);
+
   a {
-    color: var(--text-color);
+    color: var(--limegreen);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

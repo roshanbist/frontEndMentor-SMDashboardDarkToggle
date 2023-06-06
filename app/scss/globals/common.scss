@@ -26,11 +26,18 @@ body {
   padding: 0 rem(15);
 }
 
-.visually-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+main {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: rem(200);
+    border-radius: 0 0 rem(20) rem(20);
+    background: var(--background-top);
+    z-index: -1;
+  }
 }

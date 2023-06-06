@@ -1,23 +1,15 @@
+const radioButtons = document.getElementsByName('theme');
 const darkRadioButton = document.querySelector('#dark');
 const lightRadioButton = document.querySelector('#light');
-const radioButtons = document.getElementsByName('theme');
-
-radioButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    darkRadioButton.checked ? setDarkMode() : setLightMode();
-  });
-});
-
-const setLightMode = () => {
-  document.body.classList = 'light';
-  localStorage.setItem('colorMode', 'light');
-  lightRadioButton.click();
-};
 
 const setDarkMode = () => {
   document.body.classList = 'dark';
   localStorage.setItem('colorMode', 'dark');
-  darkRadioButton.click();
+};
+
+const setLightMode = () => {
+  document.body.classList = 'light';
+  localStorage.setItem('colorMode', 'light');
 };
 
 const localStorageColorMode = () => {
@@ -25,19 +17,20 @@ const localStorageColorMode = () => {
 };
 
 const systemPreferenceColorMode = () => {
-  console.log('i am called');
-  console.log(
-    'k hyo yo',
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
   return window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light';
 };
 
-const loadColorMode = () => {
+radioButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    darkRadioButton.checked ? setDarkMode() : setLightMode();
+  });
+});
+
+const selectedColorMode = () => {
   const theme = localStorageColorMode() || systemPreferenceColorMode();
-  theme === 'dark' ? setDarkMode() : setLightMode();
+  theme === 'dark' ? darkRadioButton.click() : lightRadioButton.click();
 };
 
 window
@@ -46,4 +39,4 @@ window
     e.matches ? darkRadioButton.click() : lightRadioButton.click();
   });
 
-loadColorMode();
+selectedColorMode();

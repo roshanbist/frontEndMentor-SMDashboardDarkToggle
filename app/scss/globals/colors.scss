@@ -14,7 +14,6 @@
   --toggle-light: hsl(230, 19%, 60%);
   --toggle-button-light: hsl(228, 46%, 96%);
 
-  // dark mode css
   --dark-bg: hsl(230, 17%, 14%);
   --dark-top-bg: hsl(232, 19%, 15%);
   --dark-card: hsl(228, 28%, 20%);
@@ -22,7 +21,6 @@
   --dark-text1: hsl(228, 34%, 66%);
   --dark-text2: hsl(0, 0%, 100%);
 
-  // light mode css
   --light-bg: hsl(0, 0%, 100%);
   --light-top-bg: hsl(225, 100%, 98%);
   --light-card: hsl(227, 47%, 96%);
@@ -30,7 +28,6 @@
   --light-text1: hsl(230, 12%, 44%);
   --light-text2: hsl(230, 17%, 14%);
 
-  // default color ie light mode on by default
   --background: var(--light-bg);
   --text-color: var(--light-text2);
   --text-color2: var(--light-text1);
@@ -39,24 +36,26 @@
   --toggle: var(--toggle-light);
   --toggle-bg: var(--toggle-bg-light);
   --toggle-button: var(--toggle-button-light);
+  --background-top: var(--light-top-bg);
 }
 
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --background: var(--dark-bg);
-//     --text-color: var(--dark-text2);
-//     --text-color2: var(--dark-text1);
-//     --card-bg: var(--dark-card);
-//     --card-hover: var(--dark-card-hover);
-//     --toggle: var(--light-bg);
-//     --toggle-bg: linear-gradient(
-//       225deg,
-//       var(--toggle-bg-end) 0%,
-//       var(--toggle-bg-start) 98.02%
-//     );
-//     --toggle-button: var(--dark-bg);
-//   }
-// }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--dark-bg);
+    --text-color: var(--dark-text2);
+    --text-color2: var(--dark-text1);
+    --card-bg: var(--dark-card);
+    --card-hover: var(--dark-card-hover);
+    --toggle: var(--light-bg);
+    --toggle-bg: linear-gradient(
+      225deg,
+      var(--toggle-bg-end) 0%,
+      var(--toggle-bg-start) 98.02%
+    );
+    --toggle-button: var(--dark-bg);
+    --background-top: var(--dark-top-bg);
+  }
+}
 
 body.light {
   --background: var(--light-bg);
@@ -67,6 +66,7 @@ body.light {
   --toggle: var(--toggle-light);
   --toggle-bg: var(--toggle-bg-light);
   --toggle-button: var(--toggle-button-light);
+  --background-top: var(--light-top-bg);
 }
 
 body.dark {
@@ -82,4 +82,5 @@ body.dark {
     var(--toggle-bg-start) 98.02%
   );
   --toggle-button: var(--dark-bg);
+  --background-top: var(--dark-top-bg);
 }
