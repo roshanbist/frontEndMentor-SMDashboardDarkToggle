@@ -57,7 +57,7 @@ Inclusive cards -- https://inclusive-components.design/cards/
 
 ---
 
-For using gulp in the project to convert the scss to css and make the workflow better, we install bunch of packages
+For using gulp in this project, to convert the scss to css and make the workflow better, we install bunch of packages
 
 - install gulp-cli
   command : npm install gulp-cli -g
